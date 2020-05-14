@@ -15,7 +15,9 @@ const forecast = (latitude,longtitude, callback) => {
         } 
         else
         {
-            const forecastData = ' The temperature is ' + body.current.temperature + ' degrees with humidity of ' + body.current.humidity + ' and is ' + body.current.weather_descriptions[0] + '.'
+            console.log(body.current)
+            const windData = 'The wind speed is ' + body.current.wind_speed + ' mph and the temperature feels like ' + body.current.feelslike + ' degrees.'
+            const forecastData = ' The temperature is ' + body.current.temperature + ' degrees with humidity of ' + body.current.humidity + ' and is ' + body.current.weather_descriptions[0] + '. ' + windData
             callback(undefined, {forecastData})
         }
     })
