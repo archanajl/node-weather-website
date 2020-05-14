@@ -12,7 +12,7 @@ weatherform.addEventListener('submit',(event) => {
     const searchvalue = search.value
     msgerrloc.textContent = 'Loading...'
     msgweather.textContent = ''
-    fetch('http://localhost:3000/weather?address='+ searchvalue).then((response)=>{
+    fetch('/weather?address='+ searchvalue).then((response)=>{
     response.json().then((data)=>{
         if(data.error)
         {
